@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+html{
+    height:100%;
+    font-family: 'Open Sans', sans-serif;
+    transition: .3s ease-out;
+    -webkit-font-smoothing: antialiased;
+
+}
+
+
+html[data-theme='light']{
+    --bg:#fff;
+    --secondary:#4e4e4e;
+    --focused:#121217;
+    --toggle-bg: #121217;
+    --toggle-text: #fff;
+    --red:#c31432;
+}
+
+html[data-theme='dark']{
+    --bg: #131313;
+    --focused:rgb(243, 243, 243);
+    --secondary: #9c9c9c; 
+    --toggle-bg: rgb(255, 255, 255);
+    --toggle-text: #121217;
+    --red:#c31432;
+    
+}
+
+body{
+    background:var(--bg);
+}
+
+focus{
+    color:var(--focused);
+}
+
+stress{
+    color:var(--red);
+    transition: color 3s !important;
+    transition-delay: 5s !important;
+}
+
+
+
+#container{
+    position:absolute;
+    width:50%;
+    height:fit-content;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    text-align: center;
+
+}
+
+#container p{
+    color:var(--focused);
+    animation: fade 0.5s cubic-bezier(0, 0.5, 0.5, 1) 0.3s backwards;
+    line-height: 30px;
+    font-weight: 600;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: 0.5px;
+    margin-top: 10px;
+
+}
+
+h2{
+    animation: fade 0.5s cubic-bezier(0, 0.5, 0.5, 1) 0.3s backwards;
+    font-weight: 300;
+    text-align:center;
+    color:var(--secondary);
+}
+
+.gradient-text {
+    color: var(--red);
+    animation: fade 0.5s cubic-bezier(0, 0.5, 0.5, 1) 0.3s backwards;
+}
+
+button{
+    padding:20px 20px 20px 0;
+    border:none;
+    background:none;
+    font-size:12pt;
+    animation: fade 0.5s cubic-bezier(0, 0.5, 0.5, 1) 0.3s backwards;
+    color:var(--red);
+    opacity:0.5;
+}
+
+button:hover{
+    cursor:pointer;
+    opacity:1;
+    transition: opacity ease-out 0.3s;
+}
+
+button:hover .chevronicon{
+    animation: letstalk ease-in-out 0.3s;
+    visibility: visible;
+}
+
+.toggle-theme{
+    position: absolute;
+    bottom:50px;
+    right:50px;
+    padding:15px 15px 12px 15px;
+    border-radius: 10px;
+    font-size:7pt;
+}
+
+.btn{
+    margin-right:10px;
+    font-weight: 600;
+}
+
+.chevronicon{
+    visibility:hidden;
+}
+
+.themeicon{
+    display:inline-flex;
+    width:30px;
+    animation: fadetwo 0.5s cubic-bezier(0, 0.5, 0.5, 1) 0.3s backwards;
+
+}
+
+.themeicon:hover{
+    cursor: pointer;
+}
+
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after {
+  transition: all 750ms !important;
+  transition-delay: 0 !important;
+}
+
+@keyframes fade{
+    0% {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    25% {
+        opacity: .1;
+    }
+    
+    50% {
+        opacity: .3;
+    }
+    75% {
+        opacity: .6;
+    }
+}
+
+@keyframes fadetwo{
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: .1;
+    }
+    
+    50% {
+        opacity: .3;
+    }
+    75% {
+        opacity: .6;
+    }
+}
+
+@keyframes letstalk{
+    0% {
+        opacity: 0;
+        transform: translateX(-24px);
+    }
+    25% {
+        opacity: .1;
+    }
+    
+    50% {
+        opacity: .3;
+    }
+    75% {
+        opacity: .6;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+
+
+@media only screen and (max-width: 600px) {}
+
+
+@media only screen and (max-width: 600px) {}
+
+
+@media only screen and (max-width: 768px) {
+    button{
+        opacity:1 !important;
+    }
+    .chevronicon{
+        visibility: visible !important;
+    }
+
+    #container{
+        width:80%;
+    
+    }
+    
+}
+
+
+@media only screen and (max-width: 992px) {
+
+}
+
+
+@media only screen and (max-width: 1200px) {
+
+}

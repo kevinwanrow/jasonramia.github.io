@@ -1,0 +1,493 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+* {
+    box-sizing: border-box;
+  }
+  
+  @font-face{
+    font-family: NCBold;
+    src: url('byjsnrmassets/fonts/NonchalanceBold.otf');
+  } 
+
+  body {
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    font-size: 17px;
+    background:#000 !important;
+    overflow-x:hidden !important;
+  }
+  
+  #myVideo {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    opacity:0.6;
+  }
+  
+  .content {
+    position: absolute;
+    color: #f1f1f1;
+    width: 40%;
+    /* padding: 20px; */
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+  
+  #myBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  #myBtn:hover {
+    background: #ddd;
+    color: black;
+  }
+
+  .container{
+      width:100%;
+      height:100vh;
+  }
+
+  #previousminibookssection{
+    width:100%;
+    height:fit-content;
+    /* padding:20px; */
+  }
+
+  
+  h1{
+    text-align:center; 
+    font-size:300%;
+    font-family: NCBold;
+    margin:0 0 5px 0;
+    padding:0;
+    animation: fadetwo 0.5s cubic-bezier(0, 0.5, 0.5, 1) 0.3s backwards;
+
+  }
+
+  .content p{
+    text-align:center !important;
+    font-family:'Open Sans', sans-serif;
+    color: rgba(255,255,255,0.8);
+    text-align: left;
+    font-size: 100%;
+    animation: fadetwo 0.5s cubic-bezier(0, 0.5, 0.5, 1) 0.3s backwards;
+  }
+
+  button{
+      margin:0;
+      padding:0;
+  }
+
+.btnicon{
+    animation: fadetwo 0.5s cubic-bezier(0, 0.5, 0.5, 1) 0.3s backwards;
+}
+
+.btncurrentminibook{
+    background:transparent;
+    border:none;
+    font-family:'Open Sans', sans-serif;
+    width:50%;
+    font-size: 80%;
+    color:#fff;
+    float:left;
+}
+
+
+
+  .btnlatesttext:hover{
+    text-decoration: underline;
+    cursor: pointer;
+
+}
+
+  .btnlatesttext{
+    animation: fadetwo 0.5s cubic-bezier(0, 0.5, 0.5, 1) 0.3s backwards;
+  }
+
+  h2{
+      font-family:'Open Sans', sans-serif;
+      color:#fff;
+      font-size:15pt;
+      margin:40px 0 40px 0;
+  }
+
+  #scrolldown{
+      position: absolute;
+      width:100%;
+      height:fit-content;
+      bottom:50px;
+      text-align:center;
+      font-size:30pt;
+      color:#fff;
+      animation: fadetwo 0.5s cubic-bezier(0, 0.5, 0.5, 1) 0.3s backwards;
+  }
+
+  #scrolldown:hover{
+    cursor:pointer;
+  }
+
+  #minibookscontainer{
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);    
+    width:90%;
+    height:fit-content;
+  }
+
+  .minibookcontainer{
+    width:49.7%;
+    /* display:inline-block; */
+    height:fit-content;
+    text-align:center !important;
+    margin-bottom:100px;
+    float:left;
+  }
+
+  .minibookdetails{
+    width:200px;
+    height:50px;
+    background:#c0c0c0;
+  }
+
+  h3{
+    position: relative;
+    color:#fff;
+    /* width:50%; */
+    width:300px;
+    left:50%;
+    transform:translateX(-50%);
+  }
+
+
+  .minibookcontainer p{
+    position: relative;
+    /* width:50%; */
+    width:300px;
+    color: rgba(255,255,255,0.6);
+    left:50%;
+    transform:translateX(-50%);
+    font-size:9pt;
+  }
+
+  .minibookcontainer button{
+    padding:12px;
+    font-size: 8pt;
+    border-radius: 5px;
+    width:300px;
+    margin-top:20px;
+  }
+
+  .unavailable{
+    color:#707070;
+    background:rgba(226, 226, 226, 0.2);
+    border: 1px solid #707070;
+  }
+
+  .available{
+    color:#fff;
+    background:#1580e0;
+    border: 1px solid #1580e0;
+  }
+
+  .available:hover{
+    cursor: pointer;
+  }
+
+  .minibookcontainer img{
+    width:300px;
+  }
+
+  #Loader{
+    position:fixed;
+    overflow: hidden !important;
+    width:100%;
+    height:100vh;
+    background:#000;
+    z-index:90;
+  }
+
+  /* #Loader span{
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    color:#fff;
+    font-family:NCBold;
+    z-index:91;
+  } */
+
+  .curtain{
+    animation: fade 0.5s cubic-bezier(0, 0.5, 0.5, 1) 0.3s;
+    visibility: hidden;
+  }
+
+  .videoloader{
+    position:fixed;
+    bottom:100px;
+    right:100px;
+    border: 2px solid #9e9e9e;
+    border-top: 2px solid #fff; /* Blue */
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 2s ease infinite;
+    z-index:92;
+  }
+    
+
+  
+
+  .overflowhide{
+    overflow: hidden !important;
+  }
+
+  .overflowshow{
+    overflow: visible !important;
+  }
+
+  header{
+    position:absolute;
+    top:0;
+    width:100%;
+    height:50px;
+    background:transparent;
+    z-index:89;
+  }
+
+  .help{
+    position: absolute;
+    right:10px;
+    top:50%;
+    transform: translateY(-50%);
+    color:rgb(158, 158, 158, 0.5);
+    border: 1px solid rgb(158, 158, 158, 0.5);
+    border-radius: 5px;
+    width:150px;
+    padding: 7px;
+    font-size: 8pt;
+    text-align: center;
+    transition: all ease-in-out 0.5s;
+  }
+
+  .help:hover{
+    color:#fff;
+    border: 1px solid #fff;
+  }
+
+  .help:hover{
+    cursor:pointer;
+  }
+
+  focus{
+    font-weight: 700;
+  }
+
+  h5{
+    text-align:center; 
+    font-weight: 200; 
+    font-family:NCBold;
+    margin:0;
+    padding:0;
+  }
+
+  #Minibookdefinition{
+    position:fixed;
+    width:100%;
+    height:100vh;
+    background: rgba(0,0,0,0.8);
+    -webkit-backdrop-filter: saturate(180%) blur(10px);
+    backdrop-filter: saturate(180%) blur(10px);
+    z-index:-10;
+    opacity:0;
+    /* left:100%; */
+    left:0;
+    transition: all ease-in-out 1s;
+    overflow:scroll !important;
+  }
+
+  #Minibookdefinition h5{
+    color:#fff;
+    line-height: 30px;
+    font-weight: 200;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: 0.5px;
+    position: absolute;
+    top:20%;
+    left:50%;
+    transform: translate(-50%,0);
+    width:70%;
+    font-family:'Open Sans', sans-serif !important;
+    font-size:14pt;
+    padding: 20px;
+    /* margin-bottom: 500px !important; */
+  }
+
+  .show{
+    /* left:0 !important; */
+    opacity:1 !important;
+    transition: all ease-in-out 1s;
+    z-index:80 !important;
+  }
+
+  .active{
+    color:#131313 !important;
+    background: #fff !important;
+
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  @keyframes fadetwo{
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: .1;
+    }
+    
+    50% {
+        opacity: .3;
+    }
+    75% {
+        opacity: .6;
+    }
+}
+
+@keyframes fade{
+  0% {
+      opacity: 1;
+  }
+  100%{
+      opacity: 0;
+  }
+
+}
+
+@keyframes fadeIn{
+  0% {
+      opacity: 0;
+  }
+  100%{
+      opacity: 1;
+  }
+
+}
+
+@media only screen and (max-width: 500px) {
+}
+
+
+@media only screen and (max-width: 600px) {
+  .minibookcontainer img{
+    width:90% !important;
+  }
+
+  .minibookcontainer button{
+    width:90% !important;
+
+  }
+
+
+
+}
+
+@media only screen and (max-width: 700px) {
+
+    h1{
+        font-size:170%;
+    }
+
+    h5{
+      font-size:50%;
+    }
+
+      .content p{
+        text-align:center;
+        font-size:10pt;
+        width:70%;
+        position: relative;
+        left:50%;
+        transform: translateX(-50%);
+      }
+
+      .content {
+        width: 90%;
+    }
+
+
+}
+
+
+@media only screen and (max-width: 768px) {
+
+
+    .content {
+        width: 80%;
+    }
+    /* .minibookcontainer p{
+      width:60%;
+    }
+  
+    h3{
+      width:60%;
+    } */
+
+    .videoloader{
+      bottom:50px !important;
+      right:50px !important;
+      }
+
+      #Minibookdefinition h5{
+        font-size:11pt;
+      }
+
+
+}
+
+
+
+
+@media only screen and (max-width: 992px) {
+  .btncurrentminibook{
+    text-align:center;
+    margin-left:50%;
+    transform: translateX(-50%);
+    float:none;
+    margin-bottom:15px;
+  }
+  .minibookcontainer{
+    width:100% !important;
+    display:block;
+
+  }
+
+  /* .minibookcontainer p{
+    width:300px;
+  }
+
+  h3{
+    width:40%;
+  } */
+
+
+
+
+}
+
+/* @media only screen and (max-width: 1200px) {
+    h1{
+        font-size:45pt;
+      }
+} */
