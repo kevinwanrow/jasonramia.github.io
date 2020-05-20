@@ -344,6 +344,15 @@
 
   }
 
+  footer{
+    color:#fff;
+    width:100%;
+    height:30px;
+    font-size:9pt;
+    text-align: center;
+    z-index:90;
+  }
+
   @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
